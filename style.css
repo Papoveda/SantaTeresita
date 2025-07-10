@@ -19,16 +19,26 @@ body {
   text-align: center;
 }
 header#principal {
-  background: linear-gradient(90deg, var(--color2), var(--color3));
+  background: linear-gradient(90deg, var(--color2), var(--color3)); /* Deja esto como respaldo */
+  background-image: url('../media/images/fondo_principal.jpg'), linear-gradient(90deg, var(--color2), var(--color3));
+  background-size: cover;
+  background-position: center;
   color: #fff;
   padding: 60px 0 40px 0;
   text-align: center;
+  position: relative;
 }
-header#principal img {
-  max-width: 160px;
-  margin-bottom: 20px;
+header#principal::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(34, 227, 82, 0.45); /* un filtro verde semitransparente */
+  z-index: 1;
 }
-.servicio-card {
+header#principal > * {
+  position: relative;
+  z-index: 2;
+}.servicio-card {
   background: var(--color6);
   border: none;
   border-radius: 12px;
