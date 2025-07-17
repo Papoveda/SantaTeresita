@@ -41,6 +41,15 @@ section h2 {
   margin-top: 2rem;
   color: #2a3553;
 }
+.anios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 1em;
+}
+
+.anios details {
+  margin: 0;
+}
 .anios details {
   margin-bottom: 1rem;
   background: #fff;
