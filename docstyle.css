@@ -1,1 +1,84 @@
-
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  background: #f8f9fa;
+  color: #222;
+}
+header {
+  background: #3a4660;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header nav a {
+  color: #fff;
+  margin-left: 2rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+header nav a:hover {
+  color: #ffd700;
+}
+.busqueda {
+  margin: 2rem auto;
+  text-align: center;
+}
+.busqueda input {
+  width: 50%;
+  padding: 0.7rem;
+  font-size: 1rem;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+}
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+section h2 {
+  margin-top: 2rem;
+  color: #2a3553;
+}
+.anios details {
+  margin-bottom: 1rem;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid #e1e1e1;
+  box-shadow: 0 2px 6px #0001;
+  padding: 1rem;
+}
+.anios summary {
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+}
+li a {
+  margin-left: 1.2rem;
+  color: #3a4660;
+  text-decoration: none;
+  font-weight: 500;
+}
+li a:hover {
+  text-decoration: underline;
+  color: #ffd700;
+}
+@media (max-width: 700px) {
+  .busqueda input {
+    width: 90%;
+  }
+  main {
+    padding: 1rem;
+  }
+}
