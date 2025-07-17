@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Repositorio de Actas</title>
+  <link rel="stylesheet" href="docsestilos.css">
+</head>
+<body>
+  <header>
+    <h1>Repositorio de Actas</h1>
+    <nav>
+      <a href="#asamblea">Asamblea</a>
+      <a href="#consejo">Consejo de Administración</a>
+    </nav>
+  </header>
+
+  <section class="busqueda">
+    <input type="text" id="buscador" placeholder="Buscar por nombre o año...">
+  </section>
+
+  <main>
+    <section id="asamblea">
+      <h2>Actas de Asamblea</h2>
+      <div class="anios">
+        <details open>
+          <summary>2024</summary>
+          <ul>
+            <li>
+              <span>Acta Asamblea Enero 2024</span>
+              <a href="pdfs/asamblea/2024/acta-enero.pdf" target="_blank">Ver</a>
+              <a href="pdfs/asamblea/2024/acta-enero.pdf" download>Descargar</a>
+            </li>
+            <!-- Más documentos aquí -->
+          </ul>
+        </details>
+        <details>
+          <summary>2023</summary>
+          <ul>
+            <li>
+              <span>Acta Asamblea Marzo 2023</span>
+              <a href="pdfs/asamblea/2023/acta-marzo.pdf" target="_blank">Ver</a>
+              <a href="pdfs/asamblea/2023/acta-marzo.pdf" download>Descargar</a>
+            </li>
+          </ul>
+        </details>
+        <!-- Más años aquí -->
+      </div>
+    </section>
+
+    <section id="consejo">
+      <h2>Actas de Consejo de Administración</h2>
+      <div class="anios">
+        <details open>
+          <summary>2024</summary>
+          <ul>
+            <li>
+              <span>Acta Consejo Febrero 2024</span>
+              <a href="pdfs/consejo/2024/acta-febrero.pdf" target="_blank">Ver</a>
+              <a href="pdfs/consejo/2024/acta-febrero.pdf" download>Descargar</a>
+            </li>
+          </ul>
+        </details>
+        <!-- Más años aquí -->
+      </div>
+    </section>
+  </main>
+
+  <script src="docbusqueda.js"></script>
+</body>
+</html>
 
