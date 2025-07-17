@@ -1,93 +1,64 @@
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  margin: 0;
+  font-family: Arial, sans-serif;
+  margin: 0; padding: 0;
   background: #f8f9fa;
-  color: #222;
 }
-header {
-  background: #3a4660;
-  color: #fff;
-  padding: 1rem 2rem;
+.explorador-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
 }
-header nav a {
+.explorador-anios {
+  width: 220px;
+  background: #23272f;
   color: #fff;
-  margin-left: 2rem;
-  text-decoration: none;
-  transition: color 0.2s;
+  border-right: 2px solid #d1d5db;
+  padding: 0;
+  box-sizing: border-box;
 }
-header nav a:hover {
-  color: #ffd700;
+.explorador-anios h2 {
+  margin: 0; padding: 18px 0 10px 24px;
+  font-size: 1.2em;
+  border-bottom: 1px solid #444;
 }
-.busqueda {
-  margin: 2rem auto;
-  text-align: center;
-}
-.busqueda input {
-  width: 50%;
-  padding: 0.7rem;
-  font-size: 1rem;
-  border: 1px solid #bbb;
-  border-radius: 5px;
-}
-main {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-section h2 {
-  margin-top: 2rem;
-  color: #2a3553;
-}
-.anios {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
-  gap: 1em;
-}
-
-.anios details {
+.explorador-anios ul {
+  list-style: none;
+  padding: 0;
   margin: 0;
 }
-.anios details {
-  margin-bottom: 1rem;
-  background: #fff;
-  border-radius: 6px;
-  border: 1px solid #e1e1e1;
-  box-shadow: 0 2px 6px #0001;
-  padding: 1rem;
-}
-.anios summary {
-  font-size: 1.1rem;
-  font-weight: bold;
+.explorador-anios li {
+  padding: 16px 24px;
   cursor: pointer;
+  border-bottom: 1px solid #363b42;
+  transition: background 0.2s;
 }
-ul {
-  list-style: none;
-  padding-left: 1rem;
+.explorador-anios li:hover,
+.explorador-anios li.selected {
+  background: #374151;
 }
-li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.3rem 0;
+.explorador-actas {
+  flex: 1;
+  padding: 32px;
+  background: #fff;
+  min-width: 0;
+  overflow-y: auto;
 }
-li a {
-  margin-left: 1.2rem;
-  color: #3a4660;
-  text-decoration: none;
-  font-weight: 500;
+.explorador-actas h3 {
+  margin-top: 0;
+  color: #3b3b3b;
+  font-size: 1.6em;
 }
-li a:hover {
-  text-decoration: underline;
-  color: #ffd700;
+.explorador-actas ul {
+  list-style: disc inside;
+  padding-left: 0;
+}
+.explorador-actas li {
+  font-size: 1.08em;
+  margin-bottom: 8px;
+  color: #1a1a1a;
 }
 @media (max-width: 700px) {
-  .busqueda input {
-    width: 90%;
-  }
-  main {
-    padding: 1rem;
-  }
+  .explorador-container { flex-direction: column; }
+  .explorador-anios { width: 100vw; border-right: none; border-bottom: 2px solid #d1d5db; }
+  .explorador-actas { padding: 16px; }
 }
