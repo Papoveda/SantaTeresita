@@ -2,201 +2,26 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Repositorio de Actas</title>
-  <link rel="stylesheet" href="css/docstyle.css">
+  <title>Actas por Año - Explorador</title>
+  <link rel="stylesheet" href="css/exploradorstyle.css">
+  <script src="js/docexplorador.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Archivo de Actas</h1>
-    <nav> <!-- Menu actas -->
-      <a href="#asamblea">Actas Asamblea</a>
-      <a href="#consejo">Actas Consejo de Administración</a>
+  <div class="explorador-container">
+    <nav class="explorador-anios">
+      <h2>Años</h2>
+      <ul id="lista-anios">
+        <li onclick="mostrarActas(this, '2024')">2024</li>
+        <li onclick="mostrarActas(this, '2023')">2023</li>
+        <li onclick="mostrarActas(this, '2022')">2022</li>
+        <li onclick="mostrarActas(this, '2021')">2021</li>
+        <li onclick="mostrarActas(this, '2020')">2020</li>
+      </ul>
     </nav>
-  </header>
-  <!-- buscador -->
-  <section class="busqueda">
-    <input type="text" id="buscador" placeholder="Buscar por nombre o año...">
-  </section>
-
-  <main>
-    <section id="asamblea">
-      <h2>Actas de Asamblea</h2>
-      <div class="anios">
-        <details open>
-          <summary>2025</summary>
-          <ul>
-            <li>
-              <span>Acta Asamblea Enero 2024</span>
-              <a href="docs/actas_consejo/Acta_consejo_30deMayo2012.pdf" target="_blank">Ver</a>
-              <a href="pdfs/asamblea/2024/acta-enero.pdf" download>Descargar</a>
-            </li>
-            <!-- Más documentos aquí -->
-          </ul>
-        </details>
-        <details>
-          <summary>2024</summary>
-          <ul>
-            <li>
-              <span>Acta Asamblea Enero 2024</span>
-              <a href="docs/actas_consejo/Acta_consejo_30deMayo2012.pdf" target="_blank">Ver</a>
-              <a href="pdfs/asamblea/2024/acta-enero.pdf" download>Descargar</a>
-            </li>
-            <!-- Más documentos aquí -->
-          </ul>
-        </details>
-        <details>
-          <summary>2023</summary>
-          <ul>
-            <li>
-              <span>Acta Asamblea Enero 2024</span>
-              <a href="docs/actas_consejo/Acta_consejo_30deMayo2012.pdf" target="_blank">Ver</a>
-              <a href="pdfs/asamblea/2024/acta-enero.pdf" download>Descargar</a>
-            </li>
-            <!-- Más documentos aquí -->
-          </ul>
-        </details>
-        <details>
-          <summary>2022</summary>
-          <ul>
-            <li>
-              <span>Acta Asamblea Enero 2024</span>
-              <a href="docs/actas_consejo/Acta_consejo_30deMayo2012.pdf" target="_blank">Ver</a>
-              <a href="pdfs/asamblea/2024/acta-enero.pdf" download>Descargar</a>
-            </li>
-            <!-- Más documentos aquí -->
-          </ul>
-        </details>
-        <details>
-          <summary>2021</summary>
-          <ul>
-            <li>
-              <span>Acta Asamblea Enero 2024</span>
-              <a href="docs/actas_consejo/Acta_consejo_30deMayo2012.pdf" target="_blank">Ver</a>
-              <a href="pdfs/asamblea/2024/acta-enero.pdf" download>Descargar</a>
-            </li>
-            <!-- Más documentos aquí -->
-          </ul>
-        </details>
-        <details>
-          <summary>2020</summary>
-          <ul>
-            <li>
-              <span>Acta Asamblea Enero 2024</span>
-              <a href="docs/actas_consejo/Acta_consejo_30deMayo2012.pdf" target="_blank">Ver</a>
-              <a href="pdfs/asamblea/2024/acta-enero.pdf" download>Descargar</a>
-            </li>
-            <!-- Más documentos aquí -->
-          </ul>
-        </details>
-        <details>
-          <summary>2019</summary>
-          <ul>
-            <li>
-              <span>Acta Asamblea Enero 2024</span>
-              <a href="docs/actas_consejo/Acta_consejo_30deMayo2012.pdf" target="_blank">Ver</a>
-              <a href="pdfs/asamblea/2024/acta-enero.pdf" download>Descargar</a>
-            </li>
-            <!-- Más documentos aquí -->
-          </ul>
-        </details>
-        <details>
-          <summary>2018</summary>
-          <ul>
-            <li>
-              <span>Acta Asamblea Enero 2024</span>
-              <a href="docs/actas_consejo/Acta_consejo_30deMayo2012.pdf" target="_blank">Ver</a>
-              <a href="pdfs/asamblea/2024/acta-enero.pdf" download>Descargar</a>
-            </li>
-            <!-- Más documentos aquí -->
-          </ul>
-        </details>
-        <details>
-          <summary>2017</summary>
-          <ul>
-            <li>
-              <span>Acta Asamblea Enero 2024</span>
-              <a href="docs/actas_consejo/Acta_consejo_30deMayo2012.pdf" target="_blank">Ver</a>
-              <a href="pdfs/asamblea/2024/acta-enero.pdf" download>Descargar</a>
-            </li>
-            <!-- Más documentos aquí -->
-          </ul>
-        </details>
-        <details>
-          <summary>2016</summary>
-          <ul>
-            <li>
-              <span>Acta Asamblea Enero 2024</span>
-              <a href="docs/actas_consejo/Acta_consejo_30deMayo2012.pdf" target="_blank">Ver</a>
-              <a href="pdfs/asamblea/2024/acta-enero.pdf" download>Descargar</a>
-            </li>
-            <!-- Más documentos aquí -->
-          </ul>
-        </details>
-        <details>
-          <summary>2015</summary>
-          <ul>
-            <li>
-              <span>Acta Asamblea Enero 2024</span>
-              <a href="docs/actas_consejo/Acta_consejo_30deMayo2012.pdf" target="_blank">Ver</a>
-              <a href="pdfs/asamblea/2024/acta-enero.pdf" download>Descargar</a>
-            </li>
-            <!-- Más documentos aquí -->
-          </ul>
-        </details>
-        <details>
-          <summary>2014</summary>
-          <ul>
-            <li>
-              <span>Acta Asamblea Enero 2024</span>
-              <a href="docs/actas_consejo/Acta_consejo_30deMayo2012.pdf" target="_blank">Ver</a>
-              <a href="pdfs/asamblea/2024/acta-enero.pdf" download>Descargar</a>
-            </li>
-            <!-- Más documentos aquí -->
-          </ul>
-        </details>
-        <details>
-          <summary>2013</summary>
-          <ul>
-            <li>
-              <span>Acta Asamblea Enero 2024</span>
-              <a href="docs/actas_consejo/Acta_consejo_30deMayo2012.pdf" target="_blank">Ver</a>
-              <a href="pdfs/asamblea/2024/acta-enero.pdf" download>Descargar</a>
-            </li>
-            <!-- Más documentos aquí -->
-          </ul>
-        </details>
-        <details>
-          <summary>2012</summary>
-          <ul>
-            <li>
-              <span>Acta Asamblea Marzo 2023</span>
-              <a href="pdfs/asamblea/2023/acta-marzo.pdf" target="_blank">Ver</a>
-              <a href="pdfs/asamblea/2023/acta-marzo.pdf" download>Descargar</a>
-            </li>
-          </ul>
-        </details>
-        <!-- Más años aquí -->
-      </div>
-    </section>
-
-    <section id="consejo">
-      <h2>Actas de Consejo de Administración</h2>
-      <div class="anios">
-        <details open>
-          <summary>2024</summary>
-          <ul>
-            <li>
-              <span>Acta de Consejo 2012</span>
-              <a href="docs/actas_consejo/Acta_consejo_19deEnero2012.pdf" target="_blank">Ver</a>
-              <a href="pdfs/consejo/2024/acta-febrero.pdf" download>Descargar</a>
-            </li>
-          </ul>
-        </details>
-        <!-- Más años aquí -->
-      </div>
-    </section>
-  </main>
-
-  <script src="js/docbusqueda.js"></script>
+    <main class="explorador-actas" id="panel-actas">
+      <h3>Bienvenido</h3>
+      <p>Selecciona un año en la barra lateral para ver las actas correspondientes.</p>
+    </main>
+  </div>
 </body>
 </html>
