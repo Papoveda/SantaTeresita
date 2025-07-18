@@ -4,24 +4,27 @@
   <meta charset="UTF-8">
   <title>Actas por Año - Explorador</title>
   <link rel="stylesheet" href="css/exploradorstyle.css">
-  <script src="js/docexplorador.js"></script>
 </head>
 <body>
-  <div class="explorador-container">
-    <nav class="explorador-anios">
-      <h2>Años</h2>
-      <ul id="lista-anios">
-        <li onclick="mostrarActas(this, '2024')">2024</li>
-        <li onclick="mostrarActas(this, '2023')">2023</li>
-        <li onclick="mostrarActas(this, '2022')">2022</li>
-        <li onclick="mostrarActas(this, '2021')">2021</li>
-        <li onclick="mostrarActas(this, '2020')">2020</li>
-      </ul>
-    </nav>
-    <main class="explorador-actas" id="panel-actas">
-      <h3>Bienvenido</h3>
-      <p>Selecciona un año en la barra lateral para ver las actas correspondientes.</p>
-    </main>
+  <div class="cajon">
+    <header>
+      <h1>Actas Santa Teresita</h1>
+    </header>
+    <div class="busqueda">
+      <input type="text" id="buscador" placeholder="Buscar acta o tema...">
+    </div>
+    <div class="explorador-container">
+      <nav class="explorador-anios">
+        <h2>Años</h2>
+        <ul id="lista-anios"></ul>
+      </nav>
+      <main class="explorador-actas" id="panel-actas">
+        <h3>Bienvenido</h3>
+        <p>Selecciona un año en la barra lateral para ver las actas correspondientes.</p>
+        <ul id="lista-actas"></ul>
+      </main>
+    </div>
   </div>
+  <script src="js/docexplorador.js" defer></script>
 </body>
 </html>
