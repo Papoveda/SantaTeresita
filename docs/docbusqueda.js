@@ -1,34 +1,78 @@
-const actasPorAnio = {
-  "2024": [
-    '<a href="docs/acta_2024_01.pdf" target="_blank">Acta 1 - Enero 2024</a>',
-    '<a href="docs/acta_2024_02.pdf" target="_blank">Acta 2 - Febrero 2024</a>',
-    '<a href="docs/acta_2024_03.pdf" target="_blank">Acta 3 - Marzo 2024</a>'
-  ],
-  "2023": [
-    '<a href="docs/acta_2023_01.pdf" target="_blank">Acta 1 - Marzo 2023</a>',
-    '<a href="docs/acta_2023_02.pdf" target="_blank">Acta 2 - Abril 2023</a>'
-  ],
-  "2022": [
-    '<a href="docs/acta_2022_01.pdf" target="_blank">Acta 1 - Mayo 2022</a>'
-  ],
-  "2021": [],
-  "2020": []
-  // Agrega aquí más años y actas según necesites
-};
+// Rango de años adaptable
+const anioInicio = 2012;
+const anioFin = 2025;
+const anios = [];
+for (let a = anioFin; a >= anioInicio; a--) anios.push(a);
 
-function mostrarActas(element, anio) {
-  // Quitar selección previa
-  document.querySelectorAll('.explorador-anios li').forEach(li => li.classList.remove('selected'));
-  // Marcar seleccionado
-  element.classList.add('selected');
-  // Mostrar actas
+// Ejemplo de datos de actas por año (puedes reemplazar con tus datos reales)
+const actasPorAnio = {};
+anios.forEach(anio => {
+  actasPorAnio[anio] = [
+    { nombre: `Acta ${anio}-01`, url: `docs/${anio}/acta-01.pdf` },
+    { nombre: `Acta ${anio}-02`, url: `docs/${anio}/acta-02.pdf` }
+  ];
+});
+
+// Renderiza el menú de años
+const listaAnios = document.getElementById('lista-anios');
+anios.forEach(anio => {
+  const li = document.createElement('li');
+  li.textContent = anio;
+  li.onclick = () => mostrarActas(anio, li);
+  listaAnios.appendChild(li);
+});
+
+function mostrarActas(anio, elementoLi) {
+  // resalta el año seleccionado
+  Array.from(listaAnios.children).forEach(li => li.classList.remove('selected'));
+  elementoLi.classList.add('selected');
+  // muestra las actas
   const panel = document.getElementById('panel-actas');
-  const actas = actasPorAnio[anio] || [];
-  if (actas.length === 0) {
-    panel.innerHTML = `<h3>Actas ${anio}</h3><p>No hay actas disponibles para este año.</p>`;
-  } else {
-    panel.innerHTML = `<h3>Actas ${anio}</h3><ul>` +
-      actas.map(a => `<li>${a}</li>`).join('') +
-      `</ul>`;
-  }
+  panel.innerHTML = `<h3>Actas ${anio}</h3><ul id="lista-actas"></ul>`;
+  const ul = document.getElementById('lista-actas');
+  (actasPorAnio[anio] || []).forEach(acta => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <span>${acta.nombre}</span>
+      <a href="${acta.url}" target="_blank">Ver</a>
+      <a href="${acta.url}" download>Descargar</a>
+    `;
+    ul.appendChild(li);
+  });
 }
+
+// Buscador simple (filtra por nombre de acta)
+document.getElementById('buscador').addEventListener('input', function() {
+  const texto = this.value.toLowerCase();
+  const panel = document.getElementById('panel-actas');
+  if (!texto) {
+    panel.innerHTML = `<h3>Bienvenido</h3>
+      <p>Selecciona un año en la barra lateral para ver las actas correspondientes.</p>
+      <ul id="lista-actas"></ul>`;
+    return;
+  }
+  // Buscar en todas las actas
+  let encontrados = [];
+  anios.forEach(anio => {
+    (actasPorAnio[anio] || []).forEach(acta => {
+      if (acta.nombre.toLowerCase().includes(texto)) 
+        encontrados.push({ ...acta, anio });
+    });
+  });
+  panel.innerHTML = `<h3>Resultados de búsqueda</h3>
+    <ul id="lista-actas"></ul>`;
+  const ul = document.getElementById('lista-actas');
+  if (encontrados.length === 0) {
+    ul.innerHTML = `<li>No se encontraron actas.</li>`;
+  } else {
+    encontrados.forEach(acta => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <span>${acta.nombre} (${acta.anio})</span>
+        <a href="${acta.url}" target="_blank">Ver</a>
+        <a href="${acta.url}" download>Descargar</a>
+      `;
+      ul.appendChild(li);
+    });
+  }
+});
